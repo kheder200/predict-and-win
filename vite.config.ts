@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-    base: '/aya-and-us/',
+    base: '/predict-and-win/',
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
@@ -17,3 +17,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+
