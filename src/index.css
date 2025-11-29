@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 40% 97%;
+    --foreground: 210 40% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 15%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 80% 56%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 20% 45%;
+
+    --accent: 180 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 160 84% 52%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 30% 88%;
+    --input: 210 30% 88%;
+    --ring: 210 100% 50%;
+
+    --radius: 1rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(240 80% 56%));
+    --gradient-hero: linear-gradient(180deg, hsl(210 40% 97%), hsl(240 50% 96%));
+    --gradient-card: linear-gradient(135deg, hsl(210 100% 96%), hsl(180 100% 96%));
+    
+    /* Colorful shadows */
+    --shadow-blue: 0 10px 30px -10px hsl(210 100% 50% / 0.3);
+    --shadow-indigo: 0 10px 30px -10px hsl(240 80% 56% / 0.3);
+    --shadow-glow: 0 0 40px hsl(210 100% 70% / 0.4);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 210 50% 8%;
+    --foreground: 210 40% 97%;
+
+    --card: 210 40% 12%;
+    --card-foreground: 210 40% 97%;
+
+    --popover: 210 40% 12%;
+    --popover-foreground: 210 40% 97%;
+
+    --primary: 210 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 40% 18%;
+    --muted-foreground: 210 40% 75%;
+
+    --accent: 180 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 160 84% 52%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 40% 20%;
+    --input: 210 40% 20%;
+    --ring: 210 100% 60%;
+
+    /* Custom gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 60%), hsl(240 80% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(210 50% 8%), hsl(240 50% 12%));
+    --gradient-card: linear-gradient(135deg, hsl(210 40% 12%), hsl(240 50% 15%));
+    
+    /* Colorful shadows for dark mode */
+    --shadow-blue: 0 10px 30px -10px hsl(210 100% 60% / 0.5);
+    --shadow-indigo: 0 10px 30px -10px hsl(240 80% 60% / 0.5);
+    --shadow-glow: 0 0 40px hsl(210 100% 70% / 0.6);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-poppins;
+  }
+}
+
+@layer utilities {
+  .animate-sparkle {
+    animation: sparkle 2s infinite;
+  }
+  
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.6; transform: scale(1.1) rotate(180deg); }
+  }
+
+  .animate-rotate-hero {
+    animation: rotate-hero 6s linear infinite;
+  }
+
+  @keyframes rotate-hero {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-girl-ready {
+    animation: girl-ready 3s ease-in-out infinite;
+    transform-origin: center;
+  }
+
+  @keyframes girl-ready {
+    0%, 100% { transform: translate(0, 0) rotate(-4deg) scale(1); }
+    50% { transform: translate(-2px, -3px) rotate(6deg) scale(1.08); }
+  }
+
+  .animate-theme-pulse {
+    animation: theme-pulse 2.4s ease-in-out infinite;
+  }
+
+  @keyframes theme-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.1); opacity: 1; }
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 3s infinite;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .animate-scroll-hint {
+    animation: scroll-hint 2s ease-in-out infinite;
+  }
+
+  @keyframes scroll-hint {
+    0%, 100% { transform: translateX(0); opacity: 0.6; }
+    50% { transform: translateX(4px); opacity: 1; }
+  }
+
+  .typewriter-text {
+    min-height: 2.5rem;
+  }
+
+  @keyframes float-ball {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px) translateY(0);
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(400px) translateY(-300px);
+    }
+  }
+
+  .animate-float-ball {
+    animation: float-ball 3s ease-in forwards;
+  }
+
+  @keyframes float-ball-alt {
+    0% {
+      opacity: 0;
+      transform: translateX(100px) translateY(0);
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-400px) translateY(-300px);
+    }
+  }
+
+  .animate-float-ball-alt {
+    animation: float-ball-alt 3s ease-in forwards;
+  }
+
+  @keyframes subtle-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+
+  .animate-subtle-float {
+    animation: subtle-float 4s ease-in-out infinite;
+  }
+
+  @keyframes slow-bounce {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(180deg); }
+  }
+
+  .animate-slow-bounce {
+    animation: slow-bounce 3s ease-in-out infinite;
+  }
+
+  @keyframes ball-to-goal-responsive {
+    0% {
+      transform: translateX(-50%) translateY(0) scale(1);
+      opacity: 1;
+    }
+    80% {
+      transform: translateX(-50%) translateY(-500px) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-50%) translateY(-520px) scale(0);
+      opacity: 0;
+    }
+  }
+
+  .animate-ball-to-goal {
+    animation: ball-to-goal-responsive 2.5s ease-in forwards;
+  }
+}
