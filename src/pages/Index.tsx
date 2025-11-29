@@ -51,6 +51,9 @@ const Index = () => {
             <p className="text-sm font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-indigo-400">
             X and Y 
             </p>
+            <p className="text-sm font-semibold text-gray-900 dark:text-white">
+              UI - UX
+            </p>
             <p className="text-sm font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-indigo-400">
             Sarah 
             </p>
@@ -62,7 +65,7 @@ const Index = () => {
             <span>🛠️</span>
             <span className="font-medium">WIP</span>
             <span>•</span>
-            <span>🎯</span>
+            <span></span>
             <span>Mock data</span>
           </div>
         </div>
@@ -72,4 +75,5 @@ const Index = () => {
 };
 
 export default Index;
+
 
