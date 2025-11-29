@@ -49,10 +49,10 @@ const Index = () => {
               Designed & built by
             </p>
             <p className="text-sm font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-indigo-400">
-              Kheder Hassoun & Ranem Asfoura
+            X and Y 
             </p>
             <p className="text-sm font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent dark:from-blue-400 dark:to-indigo-400">
-              UI/UX direction — Sarah Salame
+            Sarah 
             </p>
           </div>
 
@@ -72,3 +72,4 @@ const Index = () => {
 };
 
 export default Index;
+
