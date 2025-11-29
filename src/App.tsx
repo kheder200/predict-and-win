@@ -17,7 +17,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/aya-and-us" element={<Index />} />
+            <Route path="/predict-and-win" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
@@ -28,3 +28,4 @@ const App = () => (
 );
 
 export default App;
+
